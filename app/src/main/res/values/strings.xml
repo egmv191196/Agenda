@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Agenda</string>
+    <string name="usuario">Usuario</string>
+    <string name="ing_user">Ingresa el usuario</string>
+    <string name="log_in">Iniciar Sesión</string>
+    <string name="name">Edgar Gabriel Martinez Villegas</string>
+    <string name="phone">2227308736</string>
+    <string name="editar">Edit</string>
+    <string name="eliminar">Delete</string>
+    <string name="LNombre">Nombre</string>
+    <string name="LApellidoPat">Apellido Paterno</string>
+    <string name="LApellidoMat">Apellido Materno</string>
+    <string name="LEdad">Edad</string>
+    <string name="LTele">Telefono</string>
+    <string name="LSexo">Sexo</string>
+    <string name="LFoto">Foto</string>
+
+    <string name="INombre">Ingresa el nombre</string>
+    <string name="IApellidoPat">Ingresa el apellido paterno</string>
+    <string name="IApellidoMat">Ingresa el apellido materno</string>
+    <string name="IEdad">Ingresa la edad</string>
+    <string name="ITele">Ingresa telefono</string>
+    <string name="ISexo">Ingresa sexo</string>
+    <string name="IFoto">Tomar foto</string>
+
+    <string name="btn_Reg">Registrar contacto</string>
+    <string name="btn_Save">Guardar contacto</string>
+
+
+
 </resources>
