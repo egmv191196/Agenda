@@ -3,11 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/drawable/diseno_boton.xml" value="0.1105" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/activity_datos_contacto.xml" value="0.22" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/activity_detalles_usuario.xml" value="0.1" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/activity_lista_contacto.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/item_contacto.xml" value="0.33" />
+        <entry key="..\:/Users/Edgar/Desktop/Agenda/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/Users/Edgar/Downloads/Edgar/Edgar/Agenda/app/src/main/res/layout/activity_detalles_usuario.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_datos_contacto.xml" value="0.46515604959384355" />
+        <entry key="app/src/main/res/layout/activity_detalles_usuario.xml" value="0.46515604959384355" />
+        <entry key="app/src/main/res/layout/activity_lista_contacto.xml" value="0.46515604959384355" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.46515604959384355" />
+        <entry key="app/src/main/res/layout/item_contacto.xml" value="0.2654980761008978" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.46515604959384355" />
+        <entry key="app/src/main/res/layout/sexo_list_item.xml" value="0.2654980761008978" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
