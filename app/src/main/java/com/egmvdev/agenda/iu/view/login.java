@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.egmvdev.agenda.core.retrofitHelper;
@@ -39,12 +40,19 @@ public class login extends AppCompatActivity {
         });
     }
     public void progressbar(){
-        int numEmpleado= Integer.parseInt(bind.etUsuario.getText().toString());
-        bind.btnLogin.setClickable(false);
-        bind.etUsuario.setClickable(false);
-        bandera=true;
-        consultaUsuario(numEmpleado);
-        bind.progressCircular.setVisibility(View.VISIBLE);
+        if(bind.etUsuario.getText().length()>0) {
+            int numEmpleado = Integer.parseInt(bind.etUsuario.getText().toString());
+            bind.btnLogin.setClickable(false);
+            bind.etUsuario.setClickable(false);
+            bandera = true;
+            consultaUsuario(numEmpleado);
+            bind.progressCircular.setVisibility(View.VISIBLE);
+        }else{
+            Toast.makeText(mCont, "Por favor ingresa tu numero de empleado", Toast.LENGTH_SHORT).show();
+            bind.etUsuario.requestFocus();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(bind.etUsuario, InputMethodManager.SHOW_IMPLICIT);
+        }
     }
     public void consultaUsuario(int numEmpleado){
         Call<empleado> respo = api.getEmpleado(numEmpleado);

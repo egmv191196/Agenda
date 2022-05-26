@@ -8,6 +8,7 @@ import com.egmvdev.agenda.data.contactoDAO;
 import com.egmvdev.agenda.data.model.contacto;
 import com.egmvdev.agenda.data.contactoDataBase;
 
+import java.sql.Blob;
 import java.util.List;
 
 public class roomHelper {
@@ -37,4 +38,6 @@ public class roomHelper {
     }
     public void delContacto(contacto c){mContactoDAO.deleteContacto(c);}
     public void updContacto(contacto c){mContactoDAO.updateContacto(c);}
+    public void deleteContacto(int id){mContactoDAO.deleteContacto(id);}
+    public void udpateContacto(int id, String nombre, String apellidoP, String apellidoM, int edad, Long telefono, int sexo, byte[] foto){mContactoDAO.updateContacto(id,nombre, apellidoP, apellidoM, edad, telefono, sexo, foto);}
 }

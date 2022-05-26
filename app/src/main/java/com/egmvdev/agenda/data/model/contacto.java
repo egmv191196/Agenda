@@ -2,10 +2,13 @@ package com.egmvdev.agenda.data.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "Contactos")
-public class contacto {
+public class contacto implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
@@ -20,10 +23,10 @@ public class contacto {
     @ColumnInfo(name = "phone")
     private Long phone;
     @ColumnInfo(name = "sexo")
-    private String sexo;
+    private int sexo;
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     private byte[] foto;
-    public contacto(@NonNull int id, String nombre, String apellidoP, String apellidoM, int edad, Long phone, String sexo,byte[] foto){
+    public contacto(String nombre, String apellidoP, String apellidoM, int edad, Long phone, int sexo, byte[] foto){
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
@@ -82,11 +85,11 @@ public class contacto {
         this.phone = phone;
     }
 
-    public String getSexo() {
+    public int getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(int sexo) {
         this.sexo = sexo;
     }
 

@@ -30,6 +30,7 @@ public class contactoAdapter extends RecyclerView.Adapter<contactoViewHolder> {
     @Override
     public void onBindViewHolder(contactoViewHolder viewHolder, int position) {
         viewHolder.bind(listContactos.get(position), contexto);
+
     }
 
     @Override

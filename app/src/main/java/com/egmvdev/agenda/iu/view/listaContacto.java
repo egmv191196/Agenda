@@ -2,6 +2,7 @@ package com.egmvdev.agenda.iu.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +34,13 @@ public class listaContacto extends AppCompatActivity {
         dbHelper=roomHelper.get(this);
         listaContactos= new ArrayList<contacto>();
         iniciarRecycler();
+        bind.rvContactos.setOnFlingListener(new RecyclerView.OnFlingListener() {
+            @Override
+            public boolean onFling(int velocityX, int velocityY) {
+                llen();
+                return false;
+            }
+        });
         bind.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
