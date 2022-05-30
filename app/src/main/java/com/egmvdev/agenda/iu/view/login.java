@@ -48,7 +48,8 @@ public class login extends AppCompatActivity {
             consultaUsuario(numEmpleado);
             bind.progressCircular.setVisibility(View.VISIBLE);
         }else{
-            Toast.makeText(mCont, "Por favor ingresa tu numero de empleado", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mCont, "Por favor ingresa tu numero de empleado", Toast.LENGTH_SHORT).show();
+            bind.etUsuario.setError("Campo vacio");
             bind.etUsuario.requestFocus();
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.showSoftInput(bind.etUsuario, InputMethodManager.SHOW_IMPLICIT);

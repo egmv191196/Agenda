@@ -7,11 +7,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.ColumnInfo;
 
@@ -19,12 +22,14 @@ import com.egmvdev.agenda.R;
 import com.egmvdev.agenda.data.model.contacto;
 import com.egmvdev.agenda.databinding.ItemContactoBinding;
 import com.egmvdev.agenda.iu.view.datosContacto;
+import com.egmvdev.agenda.iu.viewmodel.listaContactoViewModel;
 
 import java.io.Serializable;
 
 public class contactoViewHolder extends RecyclerView.ViewHolder {
     private ItemContactoBinding binding;
     private roomHelper dbHelper;
+    private listaContactoViewModel listaContactoVM;
     public contactoViewHolder(View itemView) {
         super(itemView);
         binding= ItemContactoBinding.bind(itemView);
@@ -32,8 +37,9 @@ public class contactoViewHolder extends RecyclerView.ViewHolder {
     public void bind(contacto C, Context contexto){
         dbHelper=roomHelper.get(contexto);
         binding.tvId.setText(Integer.toString(C.getId()));
-        binding.tvName.setText(C.getNombre()+" "+C.getApellidoP()+" "+ C.getApellidoM()+" ID: "+ C.getId());
+        binding.tvName.setText(C.getNombre()+" "+C.getApellidoP()+" "+ C.getApellidoM());
         binding.telefono.setText(Long.toString(C.getPhone()));
+        listaContactoVM= new ViewModelProvider((ViewModelStoreOwner) contexto).get(listaContactoViewModel.class);// View model
         //Byte[] to Drawable
         if (C.getFoto().length != 0) {
             BitmapDrawable bd = new BitmapDrawable(BitmapFactory.decodeByteArray(C.getFoto(), 0, C.getFoto().length));
@@ -65,6 +71,8 @@ public class contactoViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 //Toast.makeText(contexto, "Click en el boton de eliminar", Toast.LENGTH_SHORT).show();
                 dbHelper.deleteContacto(C.getId());
+                listaContactoVM.actualizarValor().postValue(1);
+                Log.i("Cambios VH", "1");
             }
         });
     }

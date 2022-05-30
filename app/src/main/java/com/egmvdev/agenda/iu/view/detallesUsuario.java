@@ -20,6 +20,7 @@ public class detallesUsuario extends AppCompatActivity {
         setContentView(bind.getRoot());
         Intent i=getIntent();
         empleado empleado= (empleado) i.getSerializableExtra("empleado");
+        getSupportActionBar().hide();
         //getActionBar().setTitle("Detalle de empleado");
         bind.tvID.setText("ID de empleado:  "+empleado.getDatos().getEmpID());
         bind.tvNombre.setText("Nombre del empleado: "+ empleado.getDatos().getNombre() +" "+ empleado.getDatos().getApPaterno()+" "+ empleado.getDatos().getApMaterno() );

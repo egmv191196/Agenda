@@ -18,6 +18,7 @@
     <string name="LPuesto">Puesto: </string>
     <string name="LGerencia">Puesto Gerencia</string>
     <string name="Linfo">Informacion</string>
+    <string name="LTitleLC">Agenda de contactos</string>
 
     <string name="INombre">Ingresa el nombre</string>
     <string name="IApellidoPat">Ingresa el apellido paterno</string>

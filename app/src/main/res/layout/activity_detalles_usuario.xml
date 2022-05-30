@@ -10,15 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp">
-
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/usuario_512"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"
+            />
         <TextView
             android:id="@+id/tv_Nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/LNombre"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_user"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
         <TextView
@@ -28,6 +39,8 @@
             android:text="@string/LIdEmpleado"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             app:layout_constraintTop_toBottomOf="@id/tv_Nombre"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
@@ -38,6 +51,8 @@
             android:text="@string/LEdad"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             app:layout_constraintTop_toBottomOf="@id/tv_ID"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
@@ -48,6 +63,8 @@
             android:text="@string/LSexo"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             app:layout_constraintTop_toBottomOf="@id/tv_Edad"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
@@ -58,6 +75,8 @@
             android:text="@string/LPuesto"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             app:layout_constraintTop_toBottomOf="@id/tv_Sexo"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
@@ -68,6 +87,8 @@
             android:text="@string/LGerencia"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/gray70"
             app:layout_constraintTop_toBottomOf="@id/tv_Puesto"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
@@ -76,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_Agendar"
+            android:backgroundTint="@color/gray50"
             app:layout_constraintTop_toBottomOf="@id/tv_Gerencia"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>

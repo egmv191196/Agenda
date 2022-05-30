@@ -30,6 +30,7 @@ public class roomHelper {
     public List<contacto> getContactos(){
         return mContactoDAO.getContactos();
     }
+    public List<contacto> getContactosOrderNombreDesc(){return mContactoDAO.getContactosOrderNombreDesc();}
     public contacto getContacto(int id){
         return mContactoDAO.getContacto(id);
     }

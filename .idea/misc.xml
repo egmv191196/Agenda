@@ -13,11 +13,13 @@
         <entry key="..\:/Users/Edgar/Downloads/Edgar/Edgar/Agenda/app/src/main/res/layout/activity_datos_contacto.xml" value="0.1" />
         <entry key="..\:/Users/Edgar/Downloads/Edgar/Edgar/Agenda/app/src/main/res/layout/activity_detalles_usuario.xml" value="0.16" />
         <entry key="..\:/Users/Edgar/Downloads/Edgar/Edgar/Agenda/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/edit.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/trash.xml" value="0.326" />
         <entry key="app/src/main/res/layout/activity_datos_contacto.xml" value="0.46515604959384355" />
         <entry key="app/src/main/res/layout/activity_detalles_usuario.xml" value="0.46515604959384355" />
         <entry key="app/src/main/res/layout/activity_lista_contacto.xml" value="0.46515604959384355" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.46515604959384355" />
-        <entry key="app/src/main/res/layout/item_contacto.xml" value="0.2654980761008978" />
+        <entry key="app/src/main/res/layout/item_contacto.xml" value="0.7530864197530864" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.46515604959384355" />
         <entry key="app/src/main/res/layout/sexo_list_item.xml" value="0.2654980761008978" />
       </map>

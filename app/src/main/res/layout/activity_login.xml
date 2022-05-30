@@ -51,10 +51,13 @@
         app:layout_constraintRight_toRightOf="parent"/>
     <EditText
         android:id="@+id/etUsuario"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:maxLength="6"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textAlignment="center"
         android:backgroundTint="@color/black"
         android:textColorHint="@color/gray"
         android:layout_marginTop="10dp"

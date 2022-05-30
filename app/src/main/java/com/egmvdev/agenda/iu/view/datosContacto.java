@@ -48,6 +48,7 @@ public class datosContacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bind= ActivityDatosContactoBinding.inflate(getLayoutInflater());
+        getSupportActionBar().hide();
         setContentView(bind.getRoot());
         Intent iin= getIntent();
         Bundle b = iin.getExtras();
@@ -56,14 +57,12 @@ public class datosContacto extends AppCompatActivity {
         {
             bandera=true;
             contactoEditar = (contacto) b.getSerializable("contacto");
-            Toast.makeText(this, contactoEditar.getId()+ " "+ contactoEditar.getNombre(), Toast.LENGTH_SHORT).show();
             bind.etNombre.setText(contactoEditar.getNombre());
             bind.etApellidoP.setText(contactoEditar.getApellidoP());
             bind.etApellidoM.setText(contactoEditar.getApellidoM());
             bind.etEdad.setText(((Integer)contactoEditar.getEdad()).toString());
             bind.etTelefono.setText(contactoEditar.getPhone().toString());
             bind.etSexo.setSelection(contactoEditar.getSexo());
-
             if (contactoEditar.getFoto().length != 0) {
                 BitmapDrawable bd = new BitmapDrawable(BitmapFactory.decodeByteArray(contactoEditar.getFoto(), 0, contactoEditar.getFoto().length));
                 //Drawable d = (Drawable) bd;
@@ -83,26 +82,19 @@ public class datosContacto extends AppCompatActivity {
         bind.btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(bandera==false){
-                    dbHelper.addContacto(guardarContacto());
-                    finish();
+                if (bind.etNombre.getText().length()>0 && bind.etApellidoP.getText().length()>0 && bind.etApellidoM.getText().length()>0 && bind.etEdad.getText().length()>0 && bind.etTelefono.getText().length()>0){
+                    if(bandera==false){
+                        dbHelper.addContacto(guardarContacto());
+                        finish();
+                    }else{
+                        contacto c= guardarContacto();
+                        dbHelper.udpateContacto(contactoEditar.getId(),c.getNombre(),c.getApellidoP(),c.getApellidoM(),c.getEdad(),c.getPhone(),c.getSexo(),c.getFoto());
+                        finish();
+                    }
                 }else{
-                    contacto c= guardarContacto();
-                    dbHelper.udpateContacto(contactoEditar.getId(),c.getNombre(),c.getApellidoP(),c.getApellidoM(),c.getEdad(),c.getPhone(),c.getSexo(),c.getFoto());
-                    finish();
+                    Toast.makeText(datosContacto.this, "Por favor revisa que todos los campos esten llenos1", Toast.LENGTH_SHORT).show();
                 }
-
-            }
-        });
-        bind.etSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(datosContacto.this, adapterView.getSelectedItem()+" ID: "+ adapterView.getSelectedItemPosition(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+                
             }
         });
     }
@@ -180,7 +172,6 @@ public class datosContacto extends AppCompatActivity {
         menu.add("Femenino");
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), R.layout.sexo_list_item, menu);
         bind.etSexo.setAdapter(adapter);
-       //((AutoCompleteTextView) bind.etSexo.getEditText()).setAdapter(adapter);
     }
 
 }

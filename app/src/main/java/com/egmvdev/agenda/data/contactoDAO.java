@@ -21,6 +21,8 @@ public interface contactoDAO {
     List<contacto> getContactos();
     @Query("SELECT * FROM Contactos WHERE id=:id")
     contacto getContacto(int id);
+    @Query("SELECT * FROM Contactos ORDER BY nombre DESC")
+    List<contacto> getContactosOrderNombreDesc();
     @Insert
     void addContacto(contacto c);
     @Delete
